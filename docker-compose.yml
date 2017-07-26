@@ -114,6 +114,7 @@ services:
         context: ./nginx
         args:
           - PHP_UPSTREAM=php-fpm
+        dockerfile: "Dockerfile-${IS_USE_APACHE}"
       volumes_from:
         - applications
       volumes:
@@ -124,6 +125,7 @@ services:
         - "${NGINX_HOST_HTTPS_PORT}:443"
       depends_on:
         - php-fpm
+        - php-apache-5.2
       networks:
         - frontend
         - backend
@@ -623,6 +625,25 @@ services:
         - redis
       networks:
         - frontend
+        - backend
+
+### PHP 5.2 With Apache #######################################
+    php-apache-5.2:
+      build:
+        context: ./php-5.2
+        args:
+          - PHP_APACHE_HTTP_PORT=${PHP_APACHE_HOST_HTTP_PORT}
+          - PHP_APACHE_HTTPS_PORT=${PHP_APACHE_HOST_HTTP_PORT}
+      ports:
+        - "${PHP_APACHE_HOST_HTTP_PORT}:80"
+        - "${PHP_APACHE_HOST_HTTPS_PORT}:443"
+      volumes:
+        - "${OLD_APPLICATION}:/var/www"
+        # - "${PHP_APACHE_SITES}:/etc/httpd/conf/sites-available/"
+      extra_hosts:
+        - "dockerhost:${DOCKER_HOST_IP}"
+      tty: true
+      networks:
         - backend
 
 ### Networks Setup ############################################

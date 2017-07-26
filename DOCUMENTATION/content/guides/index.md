@@ -326,7 +326,6 @@ Set the following variables:
 - `laradock/php-fpm/xdebug.ini`
 
 Set the following variables:
-
 ```
 xdebug.remote_autostart=1
 xdebug.remote_enable=1
@@ -337,7 +336,6 @@ xdebug.cli_color=1
 
 <a name="InstallCleanHouse"></a>
 ### Need to clean house first?
-
 Make sure you are starting with a clean state. For example, do you have other Laradock containers and images?
 Here are a few things I use to clean things up.
 
@@ -428,7 +426,6 @@ Copyright (c) 1997-2016 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
     with Xdebug v2.4.1, Copyright (c) 2002-2016, by Derick Rethans
 ```
-
 Other commands include `.php-fpm/xdebug start | stop`.
 
 If you have enabled `xdebug=true` in `docker-compose.yml/php-fpm`, `xdebug` will already be running when
@@ -437,7 +434,6 @@ If you have enabled `xdebug=true` in `docker-compose.yml/php-fpm`, `xdebug` will
 
 <a name="InstallPHPStormConfigs"></a>
 ## PHPStorm Settings
-
 - Here are some settings that are known to work:
     - `Settings/BuildDeploymentConnection`
         - ![Settings/BuildDeploymentConnection](/images/photos/PHPStorm/Settings/BuildDeploymentConnection.png)

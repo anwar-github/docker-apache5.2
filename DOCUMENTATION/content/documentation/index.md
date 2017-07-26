@@ -158,7 +158,12 @@ You might use the `--no-cache` option if you want full rebuilding (`docker-compo
 
 ## Speed up with docker-sync
 
+<<<<<<< f8527897201b2508e96df5c422192e9b2cbb19b5
 Docker on the Mac [is slow](https://github.com/docker/for-mac/issues/77), at the time of writing. Especially for larger projects, this can be a problem. The problem is [older than March 2016](https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound/8076) - as it's a such a long-running issue, we're including it in the docs here.
+=======
+Docker for Mac is [slow](https://github.com/docker/for-mac/issues/77) due to poor performance when the application accesses files shared with the host machine. 
+One solution is to use [docker-sync](https://github.com/EugenMayer/docker-sync). 
+>>>>>>> Initial Commit.
 
 In simple terms, docker-sync creates a docker container with a copy of all the application files that can be accessed very quickly from the other containers. 
 On the other hand, docker-sync runs a process on the host machine that continuously tracks and updates files changes from the host to this intermediate container.
@@ -809,7 +814,11 @@ docker-compose up -d mariadb phpmyadmin
 1 - Run the Adminer Container (`adminer`) with the `docker-compose up` command. Example:
 
 ```bash
+<<<<<<< f8527897201b2508e96df5c422192e9b2cbb19b5
 docker-compose up -d adminer
+=======
+docker-compose up -d adminer  
+>>>>>>> Initial Commit.
 ```
 
 2 - Open your browser and visit the localhost on port **8080**:  `http://localhost:8080`
@@ -1099,6 +1108,7 @@ To change the default forwarded port for ssh:
 
 
 <br>
+<<<<<<< f8527897201b2508e96df5c422192e9b2cbb19b5
 <a name="Change-the-MySQL-Version"></a>
 ## Change the (MySQL) Version
 By default **MySQL 8.0** is running.
@@ -1119,6 +1129,8 @@ Available versions are: 5.5, 5.6, 5.7, 8.0, or latest.  See https://store.docker
 
 
 <br>
+=======
+>>>>>>> Initial Commit.
 <a name="MySQL-access-from-host"></a>
 ## MySQL access from host
 

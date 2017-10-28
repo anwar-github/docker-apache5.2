@@ -205,7 +205,7 @@ services:
         - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
         - TZ=${WORKSPACE_TIMEZONE}
       volumes:
-        - ${DATA_SAVE_PATH}/mysql:/var/lib/mysql
+        - F:/staging/data:/var/lib/mysql
         - ${MYSQL_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
       ports:
         - "${MYSQL_PORT}:3306"
@@ -642,6 +642,9 @@ services:
         # - "${PHP_APACHE_SITES}:/etc/httpd/conf/sites-available/"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "core.local:172.20.0.1"
+        - "blackhawk.dev/.local:172.20.0.1"
+        - "admin.local/.local:172.20.0.1"
       tty: true
       networks:
         - backend
